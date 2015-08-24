@@ -75,30 +75,33 @@ var ReactRally = React.createClass({
 
   render: function() {
     return (
-      <Navigator
-        debugOverlay={false}
-        style={styles.container}
-        ref={(navigator) => {
-          this._navigator = navigator;
-        }}
-        renderScene={this.renderScene}
-        initialRoute={ROUTE_STACK[INITIAL_ROUTE]}
-        initialRouteStack={ROUTE_STACK}
-        configureScene={() => ({
-          ...Navigator.SceneConfigs.HorizontalSwipeJump,
-        })}
-        navigationBar={
-          <Navbar
-            ref={(navBar) => {
-              this.navBar = navBar;
-            }}
-            initTabIndex={INITIAL_ROUTE}
-            onTabIndex={(index) => {
-              this._navigator.jumpTo(ROUTE_STACK[index]);
-            }}
-          />
-        }
-      />
+      <View style={styles.container}>
+        <TitleBar title="React Rally 2015" />
+        <Navigator
+          debugOverlay={false}
+          style={styles.container}
+          ref={(navigator) => {
+            this._navigator = navigator;
+          }}
+          renderScene={this.renderScene}
+          initialRoute={ROUTE_STACK[INITIAL_ROUTE]}
+          initialRouteStack={ROUTE_STACK}
+          configureScene={() => ({
+            ...Navigator.SceneConfigs.HorizontalSwipeJump,
+          })}
+          navigationBar={
+            <Navbar
+              ref={(navBar) => {
+                this.navBar = navBar;
+              }}
+              initTabIndex={INITIAL_ROUTE}
+              onTabIndex={(index) => {
+                this._navigator.jumpTo(ROUTE_STACK[index]);
+              }}
+            />
+          }
+        />
+      </View>
     );
   }
 });
