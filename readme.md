@@ -3,9 +3,9 @@
 Built in React Native
 
 Built by:
-- [http://github.com/evblurbs](Evan Johnson)
-- [http://github.com/ppiekarczyk](Peter Piekarczyk)
+- [Evan Johnson](http://github.com/evblurbs)
+- [Peter Piekarczyk](http://github.com/ppiekarczyk)
 
 
 Check it out on ExponentJS:
-[https://github.com/exponentjs](ExponentJs)
+[Exponent JS](https://github.com/exponentjs)
