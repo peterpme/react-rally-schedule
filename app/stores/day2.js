@@ -53,7 +53,8 @@ var day2 = [
     speaker: 'Peter Piekarczyk',
     detail: "The Web Audio API has taken a huge leap forward by introducing MIDI into the equation. That means making music in the browser with all the great instruments you've had at home! Learn what it takes to build your own synths, styles or effects with React!",
     id: 23,
-    day: 2
+    day: 2,
+    twitter: 'peterpme'
   },
   {
     time: '11:30 AM',
