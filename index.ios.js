@@ -35,9 +35,10 @@ var Navbar = React.createClass({
   render: function() {
     return (
       <View style={styles.navbar}>
-        <TabBarIOS>
+        <TabBarIOS barTintColor="#1B3646" tintColor="#FFF102">
           <TabBarIOS.Item
             title="Day 1"
+            icon={require('image!tea38')}
             selected={this.state.tabIndex === 0}
             onPress={() => {
               this.setState({tabIndex: 0})
@@ -47,6 +48,7 @@ var Navbar = React.createClass({
           </TabBarIOS.Item>
           <TabBarIOS.Item
             title="Day 2"
+            icon={require('image!fruit162')}
             selected={this.state.tabIndex === 1}
             onPress={() => {
               this.setState({tabIndex: 1})
@@ -65,11 +67,11 @@ var ReactRally = React.createClass({
   renderScene(route, nav) {
     switch(route.id) {
       case 'day2':
-        return <ScheduleView day={DAY_1} navigator={nav} />
+        return <ScheduleView day={DAY_2} navigator={nav} />
       case 'DetailView':
         return <DetailView event={route.event} navigator={nav} />
       default:
-        return <ScheduleView day={DAY_2} navigator={nav} />
+        return <ScheduleView day={DAY_1} navigator={nav} />
     }
   },
 
