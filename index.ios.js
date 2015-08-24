@@ -112,7 +112,7 @@ var styles = StyleSheet.create({
   container: {
     flex: 1,
     overflow: 'hidden',
-    backgroundColor: '#fff',
+    backgroundColor: '#1B3646',
   },
   navbar: {
     height: 50
