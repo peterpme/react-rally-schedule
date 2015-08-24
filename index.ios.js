@@ -16,8 +16,8 @@ var DAY_2 = require('./app/stores/day2')
 
 var INITIAL_ROUTE = 0
 var ROUTE_STACK = [
-  { id: 'day1', component: 'ScheduleView'},
-  { id: 'day2', component: 'ScheduleView'}
+  { id: 'day1'},
+  { id: 'day2'}
 ]
 
 var Navbar = React.createClass({
@@ -32,7 +32,7 @@ var Navbar = React.createClass({
       <View style={styles.navbar}>
         <TabBarIOS>
           <TabBarIOS.Item
-            systemIcon="bookmarks"
+            title="Day 1"
             selected={this.state.tabIndex === 0}
             onPress={() => {
               this.setState({tabIndex: 0})
@@ -41,7 +41,7 @@ var Navbar = React.createClass({
             <View />
           </TabBarIOS.Item>
           <TabBarIOS.Item
-            systemIcon="contacts"
+            title="Day 2"
             selected={this.state.tabIndex === 1}
             onPress={() => {
               this.setState({tabIndex: 1})

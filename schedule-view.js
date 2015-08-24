@@ -2,7 +2,6 @@
 
 var React = require('react-native');
 var {
-  AppRegistry,
   StyleSheet,
   ListView,
   TouchableHighlight,
@@ -20,7 +19,7 @@ var ScheduleView = React.createClass({
   },
 
   handleDetailView(event) {
-    console.log('event', event)
+    this.props.navigator.push({id: 'DetailView', data: event})
   },
 
   renderRow: function(event, index) {
