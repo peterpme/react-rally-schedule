@@ -26,8 +26,8 @@ var ScheduleView = React.createClass({
     return (
       <TouchableHighlight key={index} onPress={() => this.handleDetailView(event)}>
         <View style={styles.row}>
-          <Text style={styles.time}>{event.time || '7:00 AM'}</Text>
-          <Text style={styles.title}>{event.title || 'Johny Football'}</Text>
+          <Text style={styles.time}>{event.time || ''}</Text>
+          <Text style={styles.title}>{event.title || ''}</Text>
           <Text style={styles.speaker}>{event.speaker || ''}</Text>
         </View>
       </TouchableHighlight>
