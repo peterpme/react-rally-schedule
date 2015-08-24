@@ -118,22 +118,13 @@ var Navbar = React.createClass({
     )
   }
 })
+
 var ReactRally = React.createClass({
 
-  handleDetailView: function() {
+  handleDetailView: function(event) {
+    console.log('event', event)
   },
 
-  renderEvent: function(event, index) {
-    return (
-      <TouchableHighlight key={index} onPress={() => this.handleDetailView(event)}>
-        <View>
-          <View>{event.time}</View>
-          <View>{event.name}</View>
-          <View>{event.speaker}></View>
-        </View>
-      </TouchableHighlight>
-    )
-  },
 
   renderScene(route, nav) {
     switch(route.id) {
@@ -178,7 +169,7 @@ var styles = StyleSheet.create({
   container: {
     flex: 1,
     overflow: 'hidden',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#fff',
   },
   navbar: {
     height: 50
