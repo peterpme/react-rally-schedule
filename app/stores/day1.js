@@ -19,7 +19,7 @@ var day1 = [
     time: '9:00 AM',
     title: 'Principals of Functional Programming in React',
     speaker: 'Jessica Kerr',
-    detail: 'As software grows, we look for new ways to break it into parts and then hook the parts together. Functional programming is about new ways to isolate and then integrate code. Learn principles behind the trappings of functional programming. React embodies some of these principles — and can embody all of them, if we use it carefully. See how we are untangling the spaghetti of MVC, first with React, then Flux, then Elm. Find out how you’re already following functional principles, and how you can choose to benefit even more.'
+    detail: 'As software grows, we look for new ways to break it into parts and then hook the parts together. Functional programming is about new ways to isolate and then integrate code. Learn principles behind the trappings of functional programming. React embodies some of these principles — and can embody all of them, if we use it carefully. See how we are untangling the spaghetti of MVC, first with React, then Flux, then Elm. Find out how you’re already following functional principles, and how you can choose to benefit even more.',
     id: 3,
     day: 1
   },
