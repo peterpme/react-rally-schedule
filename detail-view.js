@@ -63,13 +63,16 @@ var styles = StyleSheet.create({
     alignItems: 'flex-start',
     backgroundColor: '#1B3646',
     paddingLeft: 30,
-    paddingRight: 30
+    paddingRight: 30,
+    paddingTop: 30
   },
   picture: {
     width: 100,
     height: 100,
     borderRadius: 50,
-    marginRight: 20
+    marginRight: 20,
+    borderColor: '#825D92',
+    borderWidth: 3
   },
   infoRow: {
     flexDirection: 'row',
