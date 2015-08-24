@@ -19,7 +19,7 @@ var ScheduleView = React.createClass({
   },
 
   handleDetailView(event) {
-    this.props.navigator.push({id: 'DetailView', data: event})
+    this.props.navigator.push({id: 'DetailView', event: event})
   },
 
   renderRow: function(event, index) {

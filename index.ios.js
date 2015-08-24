@@ -1,7 +1,13 @@
 'use strict';
 
 var React = require('react-native');
-var ScheduleView = require('./schedule-view')
+
+var ScheduleView = require('./schedule-view');
+var DetailView = require('./detail-view');
+
+var DAY_1 = require('./app/stores/day1');
+var DAY_2 = require('./app/stores/day2');
+
 var {
   AppRegistry,
   StyleSheet,
@@ -11,13 +17,11 @@ var {
   View,
 } = React;
 
-var DAY_1 = require('./app/stores/day1')
-var DAY_2 = require('./app/stores/day2')
-
 var INITIAL_ROUTE = 0
 var ROUTE_STACK = [
   { id: 'day1'},
-  { id: 'day2'}
+  { id: 'day2'},
+  { id: 'ScheduleView'}
 ]
 
 var Navbar = React.createClass({
@@ -57,15 +61,13 @@ var Navbar = React.createClass({
 
 var ReactRally = React.createClass({
 
-  handleDetailView: function(event) {
-    console.log('event', event)
-  },
-
-
   renderScene(route, nav) {
+    console.log('render scene', route, nav)
     switch(route.id) {
       case 'day2':
         return <ScheduleView day={DAY_1} navigator={nav} />
+      case 'DetailView':
+        return <DetailView event={route.event} navigator={nav} />
       default:
         return <ScheduleView day={DAY_2} navigator={nav} />
     }
