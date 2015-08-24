@@ -9,6 +9,7 @@ var {
   Image,
   Text,
   View,
+  ScrollView
 } = React;
 
 var DetailView = React.createClass({
@@ -38,24 +39,29 @@ var DetailView = React.createClass({
   render: function() {
     var event = this.props.event
     return (
-      <View style={styles.container}>
-        <Text style={styles.title}>{event.title || ''}</Text>
-        <View style={styles.infoRow}>
-          {this.renderTwitter()}
-          <View>
-            <Text style={styles.time}>{event.time || ''}</Text>
-            <Text style={styles.speaker}>{event.speaker || ''}</Text>
-            {this.renderTwitterLink()}
+      <ScrollView style={styles.scrollView}>
+        <View style={styles.container}>
+          <Text style={styles.title}>{event.title || ''}</Text>
+          <View style={styles.infoRow}>
+            {this.renderTwitter()}
+            <View>
+              <Text style={styles.time}>{event.time || ''}</Text>
+              <Text style={styles.speaker}>{event.speaker || ''}</Text>
+              {this.renderTwitterLink()}
+            </View>
           </View>
+          <Text style={styles.detail}>{event.detail || ''}</Text>
         </View>
-        <Text style={styles.detail}>{event.detail || ''}</Text>
-      </View>
+      </ScrollView>
     )
   }
 
 })
 
 var styles = StyleSheet.create({
+  scrollView: {
+    marginTop: 0
+  },
   container: {
     flex: 1,
     flexDirection: 'column',
@@ -64,7 +70,8 @@ var styles = StyleSheet.create({
     backgroundColor: '#1B3646',
     paddingLeft: 30,
     paddingRight: 30,
-    paddingTop: 30
+    paddingTop: 10,
+    paddingBottom: 30
   },
   picture: {
     width: 100,
