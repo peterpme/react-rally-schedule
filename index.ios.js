@@ -4,6 +4,7 @@ var React = require('react-native');
 
 var ScheduleView = require('./schedule-view');
 var DetailView = require('./detail-view');
+var TitleBar = require('./title-bar');
 
 var DAY_1 = require('./app/stores/day1');
 var DAY_2 = require('./app/stores/day2');
@@ -62,7 +63,6 @@ var Navbar = React.createClass({
 var ReactRally = React.createClass({
 
   renderScene(route, nav) {
-    console.log('render scene', route, nav)
     switch(route.id) {
       case 'day2':
         return <ScheduleView day={DAY_1} navigator={nav} />

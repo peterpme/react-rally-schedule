@@ -1,14 +1,15 @@
 'use strict';
 
 var React = require('react-native');
+var TitleBar = require('./title-bar');
+
 var {
   StyleSheet,
-  ListView,
   Text,
   View,
 } = React;
 
-var ScheduleView = React.createClass({
+var DetailView = React.createClass({
 
   render: function() {
     var event = this.props.event
@@ -30,4 +31,4 @@ var styles = StyleSheet.create({
   }
 })
 
-module.exports = ScheduleView
+module.exports = DetailView
