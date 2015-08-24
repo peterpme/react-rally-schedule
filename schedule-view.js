@@ -25,10 +25,10 @@ var ScheduleView = React.createClass({
   renderRow: function(event, index) {
     return (
       <TouchableHighlight key={index} onPress={() => this.handleDetailView(event)}>
-        <View>
-          <Text>{event.time || '7:00 AM'}</Text>
-          <Text>{event.name || 'Johny Football'}</Text>
-          <Text>{event.speaker || 'Test'}</Text>
+        <View style={styles.row}>
+          <Text style={styles.time}>{event.time || '7:00 AM'}</Text>
+          <Text style={styles.title}>{event.title || 'Johny Football'}</Text>
+          <Text style={styles.speaker}>{event.speaker || 'Test'}</Text>
         </View>
       </TouchableHighlight>
     )
@@ -48,6 +48,26 @@ var ScheduleView = React.createClass({
 })
 
 var styles = StyleSheet.create({
+  row: {
+    backgroundColor: '#1B3646',
+    paddingTop: 10,
+    paddingBottom: 10,
+    paddingLeft: 15,
+    paddingRight: 15,
+    fontSize: 12
+  },
+  time: {
+    color: '#fff',
+  },
+  title: {
+    color: '#46D3BC',
+    fontSize: 16,
+    fontWeight: 'bold'
+  },
+  speaker: {
+    color: '#fff',
+    fontSize: 16
+  },
   separator: {
     backgroundColor: '#eee',
     height: .5
