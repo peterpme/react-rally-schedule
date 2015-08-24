@@ -28,7 +28,7 @@ var ScheduleView = React.createClass({
         <View style={styles.row}>
           <Text style={styles.time}>{event.time || '7:00 AM'}</Text>
           <Text style={styles.title}>{event.title || 'Johny Football'}</Text>
-          <Text style={styles.speaker}>{event.speaker || 'Test'}</Text>
+          <Text style={styles.speaker}>{event.speaker || ''}</Text>
         </View>
       </TouchableHighlight>
     )
