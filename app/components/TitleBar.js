@@ -49,11 +49,11 @@ var styles = StyleSheet.create({
     flexDirection:'row'
   },
   toolbarHighlight: {
-    width: 100,
+    width: 70,
     paddingLeft: 10
   },
   toolbarButton: {
-    width: 100,
+    width: 70,
     paddingLeft: 10,
     color:'#fff',
     textAlign:'center',
