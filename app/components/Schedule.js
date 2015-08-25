@@ -9,6 +9,7 @@ var {
   TouchableHighlight,
   NavigatorIOS,
   View,
+  ScrollView
 } = React;
 
 var Schedule = React.createClass({
@@ -20,11 +21,9 @@ var Schedule = React.createClass({
   },
 
   handleDetailView(event) {
-    console.log('row clicked');
     this.props.navigator.push({
-      title: event.title,
-      component: Detail,
-      passProps: {event: event}
+      id: 'detail',
+      data: event
     });
   },
 
@@ -39,10 +38,9 @@ var Schedule = React.createClass({
       </TouchableHighlight>
     )
   },
-  
+
   render: function() {
     return (
-      <View style={styles.container}>
         <ListView
           dataSource={this.state.dataSource}
           renderRow={this.renderRow}
@@ -50,20 +48,11 @@ var Schedule = React.createClass({
           contentInset={{bottom:49}}
           automaticallyAdjustContentInsets={false}
         />
-      </View>
     );
   }
 });
 
 var styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    overflow: 'hidden',
-    paddingTop: 65
-  },
-  listView: {
-    flex: 1
-  },
   row: {
     backgroundColor: '#1B3646',
     paddingTop: 10,

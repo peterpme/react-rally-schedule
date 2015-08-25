@@ -25,7 +25,7 @@ var day1 = [
     day: 1
   },
   {
-    tile: '9:30 AM',
+    time: '9:30 AM',
     title: 'Elegant React with ES6 (and a bit of ES7)',
     speaker: 'Jem Young',
     twitter: 'JemYoung',

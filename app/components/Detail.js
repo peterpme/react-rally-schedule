@@ -113,9 +113,9 @@ var styles = StyleSheet.create({
     paddingRight: 20
   },
   detail: {
-    fontSize: 14,
+    fontSize: 16,
     color: '#FFF',
-    lineHeight: 20
+    lineHeight: 22
   }
 });
 

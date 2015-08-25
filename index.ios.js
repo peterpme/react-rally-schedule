@@ -10,11 +10,7 @@ var DAY_2 = require('./app/stores/day2');
 
 var {
   AppRegistry,
-  StyleSheet,
-  Text,
-  Navigator,
   TabBarIOS,
-  View,
 } = React;
 
 var ReactRally = React.createClass({
@@ -32,7 +28,9 @@ var ReactRally = React.createClass({
 
   render: function() {
     return (
-      <TabBarIOS>
+      <TabBarIOS
+        barTintColor="#323232"
+        tintColor="#377C9B">
         <TabBarIOS.Item
           title="Day 1"
           icon={ require('image!tea38') }
@@ -49,17 +47,6 @@ var ReactRally = React.createClass({
         </TabBarIOS.Item>
       </TabBarIOS>
     );
-  }
-});
-
-var styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    overflow: 'hidden',
-    backgroundColor: '#1B3646',
-  },
-  navbar: {
-    height: 50
   }
 });
 
