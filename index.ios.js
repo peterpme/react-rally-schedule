@@ -2,9 +2,8 @@
 
 var React = require('react-native');
 
-var ScheduleView = require('./schedule-view');
-var DetailView = require('./detail-view');
-var TitleBar = require('./title-bar');
+var Main = require('./app/components/Main');
+var Schedule = require('./app/components/Schedule');
 
 var DAY_1 = require('./app/stores/day1');
 var DAY_2 = require('./app/stores/day2');
@@ -18,92 +17,37 @@ var {
   View,
 } = React;
 
-var INITIAL_ROUTE = 0
-var ROUTE_STACK = [
-  { id: 'day1'},
-  { id: 'day2'},
-  { id: 'ScheduleView'}
-]
-
-var Navbar = React.createClass({
-  getInitialState: function() {
-    return {
-      tabIndex: this.props.initTabIndex
-    }
-  },
-
-  render: function() {
-    return (
-      <View style={styles.navbar}>
-        <TabBarIOS barTintColor="#1B3646" tintColor="#FFF102">
-          <TabBarIOS.Item
-            title="Day 1"
-            icon={require('image!tea38')}
-            selected={this.state.tabIndex === 0}
-            onPress={() => {
-              this.setState({tabIndex: 0})
-              this.props.onTabIndex(0)
-            }}>
-            <View />
-          </TabBarIOS.Item>
-          <TabBarIOS.Item
-            title="Day 2"
-            icon={require('image!fruit162')}
-            selected={this.state.tabIndex === 1}
-            onPress={() => {
-              this.setState({tabIndex: 1})
-              this.props.onTabIndex(1)
-            }}>
-            <View />
-          </TabBarIOS.Item>
-        </TabBarIOS>
-      </View>
-    )
-  }
-})
-
 var ReactRally = React.createClass({
-
-  renderScene(route, nav) {
-    switch(route.id) {
-      case 'day2':
-        return <ScheduleView day={DAY_2} navigator={nav} />
-      case 'DetailView':
-        return <DetailView event={route.event} navigator={nav} />
-      default:
-        return <ScheduleView day={DAY_1} navigator={nav} />
+  getInitialState() {
+    return {
+      selectedTab: 'day1'
     }
+  },
+
+  changeTab(tabName) {
+    this.setState({
+      selectedTab: tabName
+    });
   },
 
   render: function() {
     return (
-      <View style={styles.container}>
-        <TitleBar title="React Rally 2015" />
-        <Navigator
-          debugOverlay={false}
-          style={styles.container}
-          ref={(navigator) => {
-            this._navigator = navigator;
-          }}
-          renderScene={this.renderScene}
-          initialRoute={ROUTE_STACK[INITIAL_ROUTE]}
-          initialRouteStack={ROUTE_STACK}
-          configureScene={() => ({
-            ...Navigator.SceneConfigs.HorizontalSwipeJump,
-          })}
-          navigationBar={
-            <Navbar
-              ref={(navBar) => {
-                this.navBar = navBar;
-              }}
-              initTabIndex={INITIAL_ROUTE}
-              onTabIndex={(index) => {
-                this._navigator.jumpTo(ROUTE_STACK[index]);
-              }}
-            />
-          }
-        />
-      </View>
+      <TabBarIOS>
+        <TabBarIOS.Item
+          title="Day 1"
+          icon={ require('image!tea38') }
+          onPress={ () => this.changeTab('day1') }
+          selected={ this.state.selectedTab === 'day1' }>
+          <Main data={DAY_1} day="1" />
+        </TabBarIOS.Item>
+        <TabBarIOS.Item
+          title="Day 2"
+          icon={ require('image!fruit162') }
+          onPress={ () => this.changeTab('day2') }
+          selected={ this.state.selectedTab === 'day2' }>
+          <Main data={DAY_2} day="2" />
+        </TabBarIOS.Item>
+      </TabBarIOS>
     );
   }
 });
